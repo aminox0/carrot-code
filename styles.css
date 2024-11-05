@@ -1,0 +1,119 @@
+/* Reset some basic styles for better consistency across browsers */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;  /* تطبيق خط "Cairo" */
+    background-color: #f5f5f5;  /* تغيير خلفية الموقع إلى أسود فاتح */
+    color: #333;  /* النصوص باللون الرمادي الداكن */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 1000px;
+    overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+h1 {
+    text-align: center;
+    color: #ff6f00;  /* اللون البرتقالي للعناوين */
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 18px;
+    resize: none;
+    min-height: 150px;
+    transition: border-color 0.3s;
+}
+
+textarea:focus {
+    border-color: #ff6f00; /* اللون البرتقالي عند التركيز */
+    outline: none;
+}
+
+button {
+    padding: 15px;
+    font-size: 18px;
+    background-color: #ff6f00;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e65c00; /* تدرج في اللون البرتقالي عند التمرير */
+}
+
+h2 {
+    margin-top: 30px;
+    font-size: 24px;
+    color: #333;  /* تغيير لون النص إلى الرمادي الداكن */
+    text-align: center;
+}
+
+.code-container {
+    background-color: #f5f5f5;  /* خلفية منطقة الكود بالأسود الفاتح */
+    color: #000;  /* النص داخل الكود باللون الأسود */
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    border: 3px solid #ff6f00; /* إضافة حدود برتقالية حول منطقة الكود */
+    overflow-x: auto;
+    max-height: 400px;
+    min-height: 150px; /* Ensure there's always space for the code */
+    transition: all 0.3s ease; /* Smooth transition for height */
+}
+
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 16px;
+    margin: 0;
+}
+
+code {
+    display: block;
+    font-family: 'Courier New', Courier, monospace;
+    color: #000;  /* النص داخل الكود باللون الأسود */
+    white-space: pre-wrap;
+}
+
+button#copy-btn {
+    background-color: #ff8001;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+button#copy-btn:hover {
+    background-color: #ffaf01;  /* تدرج اللون البرتقالي عند التمرير على الزر */
+}

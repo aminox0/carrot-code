@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrot | Code Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+</head>
+</head>
+<body>
+    <div class="container">
+        <h1>Carrot | Code Generator</h1>
+        <form method="post">
+            <textarea name="description" rows="6" placeholder="Enter a description for code generation..." required></textarea>
+            <button type="submit">Generate Code</button>
+        </form>
+        {% if code %}
+            <h2>Generated Code:</h2>
+            <div class="code-container">
+                <pre><code id="generated-code">{{ code }}</code></pre>
+                <button id="copy-btn" onclick="copyCode()">Copy Code</button>
+            </div>
+        {% endif %}
+    </div>
+
+    <script>
+        function copyCode() {
+            const codeElement = document.getElementById('generated-code');
+            const range = document.createRange();
+            range.selectNode(codeElement);
+            window.getSelection().removeAllRanges(); // Clear previous selections
+            window.getSelection().addRange(range);
+            document.execCommand('copy');
+            window.getSelection().removeAllRanges(); // Clear selection after copying
+
+            alert('Code copied to clipboard!');
+        }
+    </script>
+</body>
+</html>
